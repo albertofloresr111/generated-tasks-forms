@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<definitions xmlns="http://www.omg.org/spec/DMN/20151101/dmn.xsd" xmlns:biodi="http://bpmn.io/schema/dmn/biodi/1.0" xmlns:camunda="http://camunda.org/schema/1.0/dmn" id="Definitions_17v4y0e" name="DRD" namespace="http://camunda.org/schema/1.0/dmn" exporter="Camunda Modeler" exporterVersion="3.1.2">
+  <decision id="country" name="Country">
+    <extensionElements>
+      <biodi:bounds x="150" y="150" width="180" height="80" />
+    </extensionElements>
+    <decisionTable id="decisionTable_1" hitPolicy="FIRST">
+      <input id="input_1" label="country" camunda:inputVariable="country">
+        <inputExpression id="inputExpression_1" typeRef="string">
+          <text></text>
+        </inputExpression>
+      </input>
+      <output id="output_1" label="taxRate" name="taxRate" typeRef="double" />
+      <rule id="DecisionRule_1l5lffe">
+        <inputEntry id="UnaryTests_0xi4kla">
+          <text>"MEXICO"</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_1pgqvnf">
+          <text>0.16</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_1d50321">
+        <inputEntry id="UnaryTests_19h26y6">
+          <text>"USA"</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_1yakr2w">
+          <text>0.10</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_0xhrsa4">
+        <inputEntry id="UnaryTests_0q1dzn8">
+          <text>"PANAMA"</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_02soobf">
+          <text>0.05</text>
+        </outputEntry>
+      </rule>
+    </decisionTable>
+  </decision>
+</definitions>
